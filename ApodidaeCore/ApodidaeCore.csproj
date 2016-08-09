@@ -149,6 +149,16 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ptv\Ptv.csproj">
+      <Project>{bdf370a0-1ad4-4f8d-96c7-0516894014ee}</Project>
+      <Name>Ptv</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YahooWeatherParser\YahooWeatherParser.csproj">
+      <Project>{01ab7075-cb81-4ad2-90f2-dc444de09363}</Project>
+      <Name>YahooWeatherParser</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

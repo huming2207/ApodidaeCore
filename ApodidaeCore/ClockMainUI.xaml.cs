@@ -25,25 +25,37 @@ namespace ApodidaeCore
     public sealed partial class ClockMainUI : Page
     {
         private Timer timeUpdateTimer;
+        private Timer weatherUpdateTimer;
         public ClockMainUI()
         {
             this.InitializeComponent();
-            timeUpdateTimer = new Timer(clockUIUpdate, null, 0, 1000);
+
+            // Main time information updating timer, runs 1 second per upgrade
+            timeUpdateTimer = new Timer(timeUpdate, null, 0, 1000);
+
+            // Weather information updating timer, runs 300s per upgrade
+            weatherUpdateTimer = new Timer(weatherInfoUpdate, null, 0, 300000);
         }
 
-        private async void clockUIUpdate(object state)
+        /// <summary>
+        /// This method is used for upgrading the time info in the UI.
+        /// </summary>
+        /// <param name="state"></param>
+        private async void timeUpdate(object state)
         {
             int currentHour = DateTime.Now.Hour;
             int currentMinute = DateTime.Now.Minute;
-
 
             await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.High, () => {
 
                 hourTextBlock.Text = currentHour.ToString();
                 minuteTextBlock.Text = currentMinute.ToString();
             });
+        }
 
-            Debug.WriteLine("Called +1s !");
+        private async void weatherInfoUpdate(object state)
+        {
+            
         }
     }
 }

@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>459635F056B6E78E4C69B34927BE5A647288ECA8C4FED7AF8BC35D10D08B0578</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>8015361ADBA9D3D6B5F7325A25CBDB5D01CEEE9B6DE859DDC36658259B4D610B</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>ccf8cb6a-63be-4949-941b-fb65e0db84ae_1.0.0.0_x86__ahtzzfnmfb1p6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>ccf8cb6a-63be-4949-941b-fb65e0db84ae_ahtzzfnmfb1p6!App</RegisteredUserModeAppID>
     <RegisteredPackageID>ccf8cb6a-63be-4949-941b-fb65e0db84ae</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\hu\Documents\Projects\ApodidaeCore\ApodidaeCore\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-08-04T10:40:56.255</Modified>
+      <Modified>2016-08-09T05:13:06.171</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hu\Documents\Projects\ApodidaeCore\ApodidaeCore\bin\x86\Debug\ApodidaeCore.exe">
       <PackagePath>entrypoint\ApodidaeCore.exe</PackagePath>
-      <Modified>2016-08-04T10:40:56.031</Modified>
+      <Modified>2016-08-09T05:13:04.232</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hu\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -532,11 +532,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hu\Documents\Projects\ApodidaeCore\ApodidaeCore\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-08-04T08:48:54.109</Modified>
+      <Modified>2016-08-04T10:56:47.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hu\Documents\Projects\ApodidaeCore\ApodidaeCore\bin\x86\Debug\Core\ApodidaeCore.exe">
       <PackagePath>ApodidaeCore.exe</PackagePath>
-      <Modified>2016-08-04T10:40:56.252</Modified>
+      <Modified>2016-08-09T05:13:06.155</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
