@@ -32,9 +32,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Margin" />
       <RootProperty Name="FontWeight" />
-      <RootProperty Name="Inlines" />
-      <RootProperty Name="FontFamily" />
       <RootProperty Name="TextAlignment" />
+      <RootProperty Name="FontFamily" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="HorizontalAlignment" />
@@ -42,10 +41,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Source" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="ApodidaeCore.ClockMainUI" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">

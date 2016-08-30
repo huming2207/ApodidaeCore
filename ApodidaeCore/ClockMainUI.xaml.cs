@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using YahooWeatherParser;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,6 +28,12 @@ namespace ApodidaeCore
     {
         private Timer timeUpdateTimer;
         private Timer weatherUpdateTimer;
+        private static class Settings
+        {
+            public static string City = "Melbourne";
+            public static string Region = "Victoria";
+            public static bool UseCelsius = true;
+        }
         public ClockMainUI()
         {
             this.InitializeComponent();
@@ -46,16 +54,104 @@ namespace ApodidaeCore
             int currentHour = DateTime.Now.Hour;
             int currentMinute = DateTime.Now.Minute;
 
-            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.High, () => {
-
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Low, () => {
                 hourTextBlock.Text = currentHour.ToString();
-                minuteTextBlock.Text = currentMinute.ToString();
+                if (currentMinute < 10)
+                {
+                    minuteTextBlock.Text = "0" + currentMinute.ToString();
+                }
+                else
+                {
+                    minuteTextBlock.Text = currentMinute.ToString();
+                }
             });
         }
 
+        /// <summary>
+        /// This method is used for upgrading the weather information
+        /// </summary>
+        /// <param name="state"></param>
         private async void weatherInfoUpdate(object state)
         {
-            
+            var yahooWeather = new YahooWeatherControl(Settings.UseCelsius);
+            var weatherResult = await yahooWeather.DoQuery(Settings.Region, Settings.City);
+            string temperatureInfo = weatherResult.Results.Channel.Item.Condition.Temperature;
+            string weatherConditionInfo = weatherResult.Results.Channel.Item.Condition.StatusText;
+            uint weatherStatusCode = (uint)weatherResult.Results.Channel.Item.Condition.Code;
+           
+
+
+
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => {
+                weatherInfoTextBlock.Text = weatherConditionInfo + " - " + temperatureInfo + "℃";
+                switch (weatherStatusCode)
+                {
+                    // Rainy
+                    case 11:
+                    case 12:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/rain.png"));
+                            break;
+                        }
+
+                    // Snowy
+                    case 15:
+                    case 16:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/snowflake.png"));
+                            break;
+                        }
+
+                    // Thunderstorm
+                    case 4:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/thunderstorm.png"));
+                            break;
+                        }
+
+                    // Sunny (at day, of course!)
+                    case 32:
+                    case 34:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/sun.png"));
+                            break;
+                        }
+
+                    // Clear at night
+                    case 31:
+                    case 33:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/moon.png"));
+                            break;
+                        }
+
+                    // Cloudy at day
+                    case 28:
+                    case 30:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/cloudyday.png"));
+                            break;
+                        }
+
+                    // Cloudy at night
+                    case 27:
+                    case 29:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/cloudynight.png"));
+                            break;
+                        }
+
+                    // Cloudy
+                    case 26:
+                        {
+                            weatherInfoIconImage.Source = new BitmapImage(new Uri(BaseUri, "/Assets/Images/cloudy.png"));
+                            break;
+                        }
+
+                    //
+                   
+                }
+            }); 
         }
     }
 }

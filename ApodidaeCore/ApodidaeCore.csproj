@@ -11,7 +11,7 @@
     <AssemblyName>ApodidaeCore</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
@@ -113,15 +113,16 @@
     <None Include="ApodidaeCore_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\cloudy.png" />
-    <Content Include="Assets\cloudynight.png" />
-    <Content Include="Assets\moon.png" />
-    <Content Include="Assets\rain.png" />
-    <Content Include="Assets\rainyday.png" />
-    <Content Include="Assets\rainynight.png" />
-    <Content Include="Assets\snowflake.png" />
-    <Content Include="Assets\storm.png" />
-    <Content Include="Assets\sun.png" />
+    <Content Include="Assets\Images\cloudyday.png" />
+    <Content Include="Assets\Images\cloudynight.png" />
+    <Content Include="Assets\Images\cloudy.png" />
+    <Content Include="Assets\Images\moon.png" />
+    <Content Include="Assets\Images\rain.png" />
+    <Content Include="Assets\Images\rainyday.png" />
+    <Content Include="Assets\Images\rainynight.png" />
+    <Content Include="Assets\Images\snowflake.png" />
+    <Content Include="Assets\Images\thunderstorm.png" />
+    <Content Include="Assets\Images\sun.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
