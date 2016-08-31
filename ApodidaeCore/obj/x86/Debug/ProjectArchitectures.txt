@@ -1,3 +1,0 @@
-C:\Users\hu\Documents\Projects\ApodidaeCore\ApodidaeCore\ApodidaeCore.csproj;x86
-C:\Users\hu\Documents\Projects\ApodidaeCore\Ptv\Ptv.csproj;neutral
-C:\Users\hu\Documents\Projects\ApodidaeCore\YahooWeatherParser\YahooWeatherParser.csproj;neutral
