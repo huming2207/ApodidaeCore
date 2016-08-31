@@ -27,7 +27,10 @@ namespace ApodidaeCore
         public MainPage()
         {
             this.InitializeComponent();
-            ApplicationView.PreferredLaunchViewSize = new Size(800, 480);
+
+            // These code below are used for simulating the Raspberry Pi screen's resolution
+            ApplicationView.PreferredLaunchViewSize = new Size(1024, 600);
+            // ApplicationView.PreferredLaunchViewSize = new Size(800, 480);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
